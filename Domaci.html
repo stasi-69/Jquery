@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name = "author" content = "Anastasija">
+    <meta name = "description" content = "Primena Jquery">
+    <title>Domaci</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+      .Body{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+
+    </header>
+    <body class = "Body">
+      <h1 class = "TitleNaslov">Ah da bas se nadam da mi se nece promeniti boja u zelenu</h1>
+      <button class = "KlikniButton">Pritisni ako smes</button>
+      <button class = "NBDAKK">Da</button>
+    </body>
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function(){
+        $('.KlikniButton').click(function(){
+          $('.TitleNaslov').css('color', "Green");
+          $('.TitleNaslov').after('<h4>uuu sad je zeleno volim zelenu </h4>')
+        });
+        $('.NBDAKK').click(function(){
+          $.get("DJL.php", function(data){
+            $('h4').html('<h4>' + data + '</h4>');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
